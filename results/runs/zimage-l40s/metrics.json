@@ -1,0 +1,108 @@
+{
+  "status": "completed",
+  "spec_sha256": "e1d79a2352812e542119ab0c7f176f0a7ead6768d4726808fe822e3c39442518",
+  "model": "Tongyi-MAI/Z-Image-Turbo",
+  "revision_requested": "f332072aa78be7aecdf3ee76d5c247082da564a6",
+  "worker_started_unix": 1795284519.3596246,
+  "environment_setup_s": 14.353145122528076,
+  "python": "3.12.3",
+  "requested_count": 10,
+  "settings": {
+    "width": 1664,
+    "height": 928,
+    "num_inference_steps": 8,
+    "guidance_scale": 0.0,
+    "max_sequence_length": 512
+  },
+  "negative_prompt_used": false,
+  "assets": [
+    {
+      "id": "variant-01",
+      "seed": 13177939,
+      "generation_s": 6.488969311999995,
+      "save_s": 0.6768122370000356,
+      "sha256": "3ad3c906af8ce653a8f520703505280a176c02f5a09653bc25a45e0d94a208ae"
+    },
+    {
+      "id": "variant-02",
+      "seed": 40601281,
+      "generation_s": 6.092370947000063,
+      "save_s": 0.7303824570000188,
+      "sha256": "4a8ea46e7c1663554b9de96c9286dbc43e3516d256fffa9d77d2eadc4b82a73e"
+    },
+    {
+      "id": "variant-03",
+      "seed": 408073958,
+      "generation_s": 6.116052216000071,
+      "save_s": 0.6559978359999832,
+      "sha256": "c1a4bc504bf0eca98dca62c0d40cfa536bfbe1fe7ac3ddad1760a22c2acc0f85"
+    },
+    {
+      "id": "variant-04",
+      "seed": 411905819,
+      "generation_s": 6.155352083000025,
+      "save_s": 0.6752092989999028,
+      "sha256": "4e2d8b0d3c514590a6b905c1c9742df4e2d80dcc6589dd097a64ab963ed6caee"
+    },
+    {
+      "id": "variant-05",
+      "seed": 799906610,
+      "generation_s": 6.204672290999952,
+      "save_s": 0.653415740000014,
+      "sha256": "6075eef6f0b651536ee4e33ddccaf558c2e9ab1756d2a8daf1941b4a107054ef"
+    },
+    {
+      "id": "variant-06",
+      "seed": 972488812,
+      "generation_s": 6.2039188730000205,
+      "save_s": 0.6634900980000111,
+      "sha256": "f3ca3cb71f75d9c3c4abec26c0216d602ac138f1ee97e67f8823646529d6086c"
+    },
+    {
+      "id": "variant-07",
+      "seed": 986165016,
+      "generation_s": 6.176164586000027,
+      "save_s": 0.7004757070000096,
+      "sha256": "d6c401ee3af8d49e7740ca47d236875d1cf1409d3b77340a1b4af16a0aea20ea"
+    },
+    {
+      "id": "variant-08",
+      "seed": 1098472890,
+      "generation_s": 6.202729197000053,
+      "save_s": 0.6894328200000928,
+      "sha256": "d239248027ad80d62a4a935e5678cbd3f5f96e270503503a2078dc91deb157b3"
+    },
+    {
+      "id": "variant-09",
+      "seed": 1635832984,
+      "generation_s": 6.212849693999942,
+      "save_s": 0.7147952590000841,
+      "sha256": "d3eb0bca3d6386871db8043e856648c517fd9581b9f7ad8d072952c632f4ac7e"
+    },
+    {
+      "id": "variant-10",
+      "seed": 1886376312,
+      "generation_s": 6.2618458509999755,
+      "save_s": 0.6666461590000381,
+      "sha256": "f379b994fd5fbc26c50a4f2e17e264a0ac3b45f7f6c5e7f526f932c34d873c81"
+    }
+  ],
+  "import_s": 4.5146478820000056,
+  "gpu": "NVIDIA L40S",
+  "torch": "2.13.0+cu130",
+  "diffusers": "0.39.0",
+  "transformers": "5.13.1",
+  "cuda": "13.0",
+  "gpu_total_gib": 44.39215087890625,
+  "revision": "f332072aa78be7aecdf3ee76d5c247082da564a6",
+  "prompt_tokens": 456,
+  "tokenizer_check_s": 2.003297880000005,
+  "model_download_s": 306.611052139,
+  "pipeline_load_s": 174.58460241400002,
+  "model_load_s": 174.58460241400002,
+  "gpu_free_after_load_gib": 24.8529052734375,
+  "transformer_precision": "bf16",
+  "prompt_encode_s": 6.71792940499995,
+  "peak_vram_gib": 22.625741958618164,
+  "worker_elapsed_s": 564.6967074871063
+}

@@ -1,0 +1,108 @@
+{
+  "status": "completed",
+  "spec_sha256": "e1d79a2352812e542119ab0c7f176f0a7ead6768d4726808fe822e3c39442518",
+  "model": "Tongyi-MAI/Z-Image-Turbo",
+  "revision_requested": "f332072aa78be7aecdf3ee76d5c247082da564a6",
+  "worker_started_unix": 1795285609.9526377,
+  "environment_setup_s": 12.519181251525879,
+  "python": "3.12.3",
+  "requested_count": 10,
+  "settings": {
+    "width": 1664,
+    "height": 928,
+    "num_inference_steps": 8,
+    "guidance_scale": 0.0,
+    "max_sequence_length": 512
+  },
+  "negative_prompt_used": false,
+  "assets": [
+    {
+      "id": "variant-01",
+      "seed": 13177939,
+      "generation_s": 3.00116033300003,
+      "save_s": 0.6861453419999748,
+      "sha256": "79e2854a48ecc20cfa3b7b20f7c1bd375debdaa10af7e01b84fc6823a0a54142"
+    },
+    {
+      "id": "variant-02",
+      "seed": 40601281,
+      "generation_s": 2.1031609199999934,
+      "save_s": 0.7985329010000441,
+      "sha256": "d232be72cac87ba94231c0037207d33e4c31b34c38a962792381a2ed3d1b762e"
+    },
+    {
+      "id": "variant-03",
+      "seed": 408073958,
+      "generation_s": 2.1056975199999783,
+      "save_s": 0.5562585950000312,
+      "sha256": "004186b250cfc66b4974ad04964bd0a6ee412e95f697d66dc5890ad638862fff"
+    },
+    {
+      "id": "variant-04",
+      "seed": 411905819,
+      "generation_s": 2.108736627999974,
+      "save_s": 0.6832942539999749,
+      "sha256": "d261821d6d9066d48443a8e9cd6f090edfd088ac70317880f6d64e05a2f75b25"
+    },
+    {
+      "id": "variant-05",
+      "seed": 799906610,
+      "generation_s": 2.109111691999999,
+      "save_s": 0.6123841909999896,
+      "sha256": "ecffe0451b2d1ad253f366790a517b158f43a64bdb1c15e4985bfbf2398f920e"
+    },
+    {
+      "id": "variant-06",
+      "seed": 972488812,
+      "generation_s": 2.1147656080000274,
+      "save_s": 0.5745918729999744,
+      "sha256": "0393150383a289b3688492377364d07a01d11a4d026c8a20b759194cb9dc66eb"
+    },
+    {
+      "id": "variant-07",
+      "seed": 986165016,
+      "generation_s": 2.1110913080000273,
+      "save_s": 0.6572711470000172,
+      "sha256": "672167b67898726fc5028b992373ec0df59c956faf687d2648a792947c25215d"
+    },
+    {
+      "id": "variant-08",
+      "seed": 1098472890,
+      "generation_s": 2.1117884359999834,
+      "save_s": 0.615100735999988,
+      "sha256": "adaf638cb73e5b2a8ce1c91bc0f671a01baf779b60cd640fd0ff7bc5ab62aa1f"
+    },
+    {
+      "id": "variant-09",
+      "seed": 1635832984,
+      "generation_s": 2.113956250000001,
+      "save_s": 0.6733325619999846,
+      "sha256": "d68626a502d97dce6de5934b427faa6a31de255299090ba603dde50e3d1cb531"
+    },
+    {
+      "id": "variant-10",
+      "seed": 1886376312,
+      "generation_s": 2.116693876999989,
+      "save_s": 0.6212309449999793,
+      "sha256": "f236e402b402c748fe5143028a23a3cbb9ba64cb736041774ce301b5b16c9fa7"
+    }
+  ],
+  "import_s": 3.844309206999995,
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "torch": "2.13.0+cu130",
+  "diffusers": "0.39.0",
+  "transformers": "5.13.1",
+  "cuda": "13.0",
+  "gpu_total_gib": 79.1787109375,
+  "revision": "f332072aa78be7aecdf3ee76d5c247082da564a6",
+  "prompt_tokens": 456,
+  "tokenizer_check_s": 1.9329785930000014,
+  "model_download_s": 309.820372674,
+  "pipeline_load_s": 5.675700914999993,
+  "model_load_s": 5.675700914999993,
+  "gpu_free_after_load_gib": 59.54901123046875,
+  "transformer_precision": "bf16",
+  "prompt_encode_s": 2.0018720759999837,
+  "peak_vram_gib": 22.649057388305664,
+  "worker_elapsed_s": 352.9967179298401
+}

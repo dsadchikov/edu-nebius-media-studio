@@ -1,0 +1,105 @@
+{
+  "status": "completed",
+  "spec_sha256": "3b24143bf510bd71566762e23a6817c41d418bae079e9b6d06dd91dc3800b67b",
+  "model": "Efficient-Large-Model/Sana_1600M_1024px_diffusers",
+  "revision": "ac0da2ff55fbe434795be0dce883042e4d49e2fc",
+  "worker_started_unix": 1795283623.1137993,
+  "environment_setup_s": 14.493403434753418,
+  "python": "3.12.3",
+  "requested_count": 10,
+  "settings": {
+    "width": 1344,
+    "height": 768,
+    "num_inference_steps": 20,
+    "guidance_scale": 4.5,
+    "max_sequence_length": 300
+  },
+  "transformer_precision": "fp16 (text encoder and VAE bf16)",
+  "assets": [
+    {
+      "id": "variant-01",
+      "seed": 13177939,
+      "generation_s": 4.4030289729999765,
+      "save_s": 0.4089012549999893,
+      "sha256": "5a71f1ae7b8013a2afeb24a39c0a036f8a59de05831dd720a3b0c610eef89e54"
+    },
+    {
+      "id": "variant-02",
+      "seed": 40601281,
+      "generation_s": 1.3539965189999918,
+      "save_s": 0.4854806190000147,
+      "sha256": "bf11b405a1e12ea59b909321f894735634fdb23ba10fe450c14d87a586e3f9cb"
+    },
+    {
+      "id": "variant-03",
+      "seed": 408073958,
+      "generation_s": 1.366749944999981,
+      "save_s": 0.4296693619999985,
+      "sha256": "06fc624ea0bc3f9add8255de1a88fdcef2f1de8b4ab7dbf4e6f962d008c02672"
+    },
+    {
+      "id": "variant-04",
+      "seed": 411905819,
+      "generation_s": 1.3630788739999957,
+      "save_s": 0.39049910299999624,
+      "sha256": "2ea4aeb3031b886425d41bc566ee7837386facf07eb2e71007cbfb90b6e7c3c3"
+    },
+    {
+      "id": "variant-05",
+      "seed": 799906610,
+      "generation_s": 1.3615323600000124,
+      "save_s": 0.42942604300000653,
+      "sha256": "f7b67937446471b5ec8dfa1f4a7bcf4c5b03ba20f0b0da334f7b5c7d1995bfec"
+    },
+    {
+      "id": "variant-06",
+      "seed": 972488812,
+      "generation_s": 1.3643177379999827,
+      "save_s": 0.37380730099999937,
+      "sha256": "e1d704cfb1971781a8faf59905d52f7bad630ae59c04924981054a6d2daafe46"
+    },
+    {
+      "id": "variant-07",
+      "seed": 986165016,
+      "generation_s": 1.3773394490000044,
+      "save_s": 0.40333796500001995,
+      "sha256": "e49b718db2308e04da376051879924e6fb98fdf9535eac03bc18a1ac01ba0918"
+    },
+    {
+      "id": "variant-08",
+      "seed": 1098472890,
+      "generation_s": 1.367241057000001,
+      "save_s": 0.43614605600001255,
+      "sha256": "5e24956d22e827b1187041ccaca001325aeca52d96fe296130c6027285c48d41"
+    },
+    {
+      "id": "variant-09",
+      "seed": 1635832984,
+      "generation_s": 1.3751980410000044,
+      "save_s": 0.48002919699999325,
+      "sha256": "3b59cc6029abae245530eaca122844d3c53b3660616e401373de2e4c9735cb7f"
+    },
+    {
+      "id": "variant-10",
+      "seed": 1886376312,
+      "generation_s": 1.377203877999989,
+      "save_s": 0.3105806599999994,
+      "sha256": "83e9e477aa27d5e2428b7fb2bdd66d7e58f2d88b0fcc07a84e16b883afc85769"
+    }
+  ],
+  "import_s": 4.501972228,
+  "gpu": "NVIDIA L40S",
+  "torch": "2.13.0+cu130",
+  "diffusers": "0.39.0",
+  "transformers": "5.13.1",
+  "cuda": "13.0",
+  "gpu_total_gib": 44.39215087890625,
+  "prompt_tokens": 247,
+  "tokenizer_check_s": 3.136354108000006,
+  "model_download_s": 93.66217983300001,
+  "pipeline_load_s": 4.308193156000016,
+  "model_load_s": 4.308193156000016,
+  "gpu_free_after_load_gib": 34.3529052734375,
+  "peak_vram_gib": 10.054078578948975,
+  "worker_elapsed_s": 127.7455267906189
+}

@@ -1,0 +1,9 @@
+[project]
+name = "edu-nebius-media-studio"
+version = "0.1.0"
+description = "Control-side tools for text-to-image batches on Nebius Serverless AI Jobs"
+requires-python = ">=3.12"
+dependencies = ["pillow==12.2.0", "boto3>=1.35,<2"]
+
+[tool.uv]
+package = false

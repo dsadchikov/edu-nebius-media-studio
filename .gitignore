@@ -1,0 +1,23 @@
+# private cloud state, credentials and local run data — never commit
+config/
+.env
+*.env
+*credentials*
+*.key
+*.pem
+outputs/
+metrics/
+# agent entry points (canonical copies live outside this repo)
+AGENTS.md
+CLAUDE.md
+.claude/
+.codex/
+# environments and caches
+.venv/
+uv.lock
+__pycache__/
+*.pyc
+.DS_Store
+._*
+*.zip
+*.tgz

@@ -1,0 +1,43 @@
+{
+  "launch": "launch-v02-eu-vip",
+  "count": 10,
+  "seeds": [
+    13177939,
+    40601281,
+    408073958,
+    411905819,
+    799906610,
+    972488812,
+    986165016,
+    1098472890,
+    1635832984,
+    1886376312
+  ],
+  "generation_wall_budget_s": 2700,
+  "required_phrase": "European Commission",
+  "acceptance_checks": [
+    "A fictional VIP official of the European Commission (no real person named) raises a warning finger and carries an EU AI ACT binder/codex.",
+    "Exactly four humans and one mechanical robot; developers distinct from the official.",
+    "An open mineral-water bottle with its cap tethered to the neck stands on the desk.",
+    "The robot hides a red REJECTED stamp behind its back, visible to the viewer.",
+    "The applicant is separate, holds the APPLICATION folder and asks for an explanation.",
+    "Expressive editorial artwork, readable joke, no speech bubbles, full composition."
+  ],
+  "seed_note": "10 seeds drawn with Python secrets.randbelow(2**31-1)+1 (owner asked for wider seed spread); identical for every model and GPU.",
+  "id": "eu-vip-sana",
+  "model": "Efficient-Large-Model/Sana_1600M_1024px_diffusers",
+  "revision": "ac0da2ff55fbe434795be0dce883042e4d49e2fc",
+  "variant": "fp16",
+  "width": 1344,
+  "height": 768,
+  "num_inference_steps": 20,
+  "guidance_scale": 4.5,
+  "max_sequence_length": 300,
+  "prompt": "Humorous, richly illustrated editorial cartoon in a messy software startup office. Exactly four humans and one robot. On the left, a VIP official of the European Commission: a woman in her sixties with short swept-back blonde hair, pearl earrings and a royal-blue blazer, holding a blue binder labelled EU AI ACT under one arm and raising a warning finger at the team. At the central desk, two embarrassed developers look guilty: a woman with dark curly hair, round glasses and a navy hoodie, and a bearded man in a burgundy sweater. On the desk stands an open bottle of mineral water with its cap still attached to the neck by a small plastic tether. Beside the desk, a small teal-and-silver mechanical robot looks sheepish and hides a large red REJECTED rubber stamp behind its back, still visible to the viewer. On the right, a separate job applicant in a tan jacket holds a green APPLICATION folder and raises an open palm, waiting for an explanation. All five faces visible. Hand-drawn magazine illustration, expressive faces and gestures, layered painted colour, soft warm shadows, laptops, sticky notes, a plant and a window over city rooftops. Fictional political satire. No speech bubbles or captions.",
+  "negative_prompt": "flowchart, diagram, stick figures, corporate icons, simplistic geometric people, photorealistic photograph, extra people, speech bubbles, watermarks",
+  "prompt_variant": "short-sana",
+  "notes": [
+    "Owner decision: Sana gets a shortened prompt because its text limit is 300 tokens; Sana is therefore not prompt-identical to Qwen/Z-Image.",
+    "1344x768 and 20 steps as in launch v01 (Sana's native ~1 MP multiscale)."
+  ]
+}

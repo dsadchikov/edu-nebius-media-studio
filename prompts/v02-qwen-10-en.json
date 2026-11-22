@@ -1,0 +1,40 @@
+{
+  "launch": "launch-v02-eu-vip",
+  "count": 10,
+  "seeds": [
+    13177939,
+    40601281,
+    408073958,
+    411905819,
+    799906610,
+    972488812,
+    986165016,
+    1098472890,
+    1635832984,
+    1886376312
+  ],
+  "generation_wall_budget_s": 2700,
+  "required_phrase": "European Commission",
+  "acceptance_checks": [
+    "A fictional VIP official of the European Commission (no real person named) raises a warning finger and carries an EU AI ACT binder/codex.",
+    "Exactly four humans and one mechanical robot; developers distinct from the official.",
+    "An open mineral-water bottle with its cap tethered to the neck stands on the desk.",
+    "The robot hides a red REJECTED stamp behind its back, visible to the viewer.",
+    "The applicant is separate, holds the APPLICATION folder and asks for an explanation.",
+    "Expressive editorial artwork, readable joke, no speech bubbles, full composition."
+  ],
+  "seed_note": "10 seeds drawn with Python secrets.randbelow(2**31-1)+1 (owner asked for wider seed spread); identical for every model and GPU.",
+  "id": "eu-vip-qwen",
+  "model": "Qwen/Qwen-Image",
+  "revision": "75e0b4be04f60ec59a75f475837eced720f823b6",
+  "width": 1664,
+  "height": 928,
+  "num_inference_steps": 40,
+  "true_cfg_scale": 4.0,
+  "max_sequence_length": 512,
+  "memory_strategy": "encode prompt once, unload text encoder, BF16 transformer direct to CUDA, tiled VAE",
+  "fp8_fallback_if_free_gib_below": 2.5,
+  "prompt": "A richly drawn, humorous European editorial comic illustration: one continuous scene in a messy software startup office. Exactly five characters: four humans and one robot. Nobody else is in the room. From left to right: On the left, a VIP representative of the European Commission: a confident woman in her sixties with short swept-back blonde hair, pearl earrings and a fitted royal-blue blazer over a white blouse. Under one arm she holds a thick blue binder clearly labelled EU AI ACT with a circle of yellow stars on its cover. She raises one warning index finger at the team, with a comically stern, slightly exasperated expression. At the central desk sit two embarrassed developers looking at her with guilty surprise: a young woman with dark brown curly hair, round glasses and a navy hoodie, and a bearded man with short brown hair in a burgundy sweater. On the desk in front of them stands an open plastic bottle of mineral water; its cap is still attached to the bottle neck by a small plastic tether and dangles to the side. Beside the desk stands a small teal-and-silver mechanical robot with visible joints and round lamp eyes. It looks sheepish and hides a large red rubber stamp behind its back; its body is turned so that the viewer clearly sees the stamp in its rear hand, and the stamp's rubber face reads REJECTED. This hidden stamp is the central visual joke. On the right in the foreground stands a separate job applicant, facing the viewer in three-quarter view: a young man with short black hair in a tan jacket. He holds a green folder labelled APPLICATION against his chest and raises his other open palm in a puzzled gesture, waiting for an explanation. Background: laptops, sticky notes, a desk plant, a window with European rooftops. Style: warm hand-drawn magazine illustration, ink contours, textured painted colour, cream light with blue, teal and burgundy accents, expressive faces, natural hands. All five faces are readable; the raised finger, the EU AI ACT binder, the tethered bottle cap, the robot's hidden stamp and the applicant's folder are clearly visible. Fictional political satire. No speech bubbles, no captions, no title, no panel borders.",
+  "negative_prompt": "flowchart, diagram, stick figures, corporate pictograms, simplistic geometric people, photorealistic news photograph, extra people, background crowd, duplicated characters, second blonde woman, missing robot, missing bottle, applicant seen from behind, cropped faces, extra fingers, fused hands, speech bubbles, illegible text, watermarks",
+  "prompt_variant": "long-common"
+}
