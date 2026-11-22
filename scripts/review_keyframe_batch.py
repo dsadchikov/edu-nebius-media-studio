@@ -40,7 +40,13 @@ def main():
                 raise ValueError("Unexpected image dimensions")
     with Image.open(folder / (assets[0]["id"] + ".png")) as img:
         img_w, img_h = img.size
-    face = Path("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf")
+    def label_font(size=22):
+        # DejaVu on Linux; common macOS fonts; else Pillow's built-in scalable font
+        for face in ("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", "/System/Library/Fonts/Supplemental/Arial.ttf",
+                     "/Library/Fonts/Arial.ttf", "/System/Library/Fonts/Helvetica.ttc"):
+            if Path(face).exists():
+                return ImageFont.truetype(face, size)
+        return ImageFont.load_default(size=size)
 
     def sheet(entries, columns, width, name):
         height = round(width * img_h / img_w)
@@ -48,7 +54,7 @@ def main():
         rows = math.ceil(len(entries) / columns)
         canvas = Image.new("RGB", (gap + columns * (width + gap), gap + rows * (height + label + gap)), "#F5F4F0")
         draw = ImageDraw.Draw(canvas)
-        font = ImageFont.truetype(str(face), 22)
+        font = label_font(22)
         for n, e in enumerate(entries):
             x, y = gap + (n % columns) * (width + gap), gap + (n // columns) * (height + label + gap)
             with Image.open(folder / (e["id"] + ".png")) as raw:

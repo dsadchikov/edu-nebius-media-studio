@@ -25,6 +25,7 @@ Submitted run: Qwen-Image on H100, `qwen-h100-20261121-190946` (10 images, one m
 | Question | Answer |
 |---|---|
 | Model | Qwen-Image (`Qwen/Qwen-Image`, revision `75e0b4be`), images 1664×928, 40 steps |
+| Modality | Image |
 | How it ran | Nebius Serverless AI **Job** |
 | GPU | H100 (preemptible, preset `1gpu-16vcpu-200gb`, eu-north1) |
 | Generation time per image | **22.86 s** — median of the 10 images (22.83–23.45 s), model already loaded |
@@ -35,6 +36,20 @@ Submitted run: Qwen-Image on H100, `qwen-h100-20261121-190946` (10 images, one m
 | Per-call API for comparison | Replicate `qwen/qwen-image`, **USD 0.025 per output image** ("or 40 images for $1") — [link](https://replicate.com/qwen/qwen-image) |
 | Self-host breakeven N | **18 images** = ceil(F / (p − c)) = ceil(0.2829 / (0.025 − 0.00883)) |
 | Second API, indirect estimate | fal.ai `fal-ai/qwen-image` lists **USD 0.02 per megapixel**, "rounding up to the nearest megapixel" — [link](https://fal.ai/models/fal-ai/qwen-image). Our 1664×928 image (1.54 MP) would be billed as 2 MP → about USD 0.04 per image, breakeven ceil(0.2829 / (0.04 − 0.00883)) = 10 images. This price is our calculation from fal's rule, not a listed per-image price. |
+
+### Timings of the submitted run
+
+Measured by the worker (`results/runs/qwen-h100/metrics.json`; Job states from the Nebius API):
+
+| Phase | Seconds |
+|---|---|
+| Startup: Job created → container running (includes about 1 min of queueing that is not billed) | 168.3 |
+| Environment: pip install, imports, tokenizer check | 16.8 |
+| Model download from Hugging Face (about 57 GB) | 542.8 |
+| Model load to GPU: text encoder 3.6 + transformer 7.2 | 10.9 |
+| Prompt encoding (once for all images) | 2.0 |
+| **Generation of each image**, 1 to 10 | 23.45, 22.83, 22.89, 22.90, 22.93, 22.84, 22.84, 22.85, 22.87, 22.84 |
+| Generation: median / total for 10 images | **22.86** / 229.3 |
 
 ## Cost per image: self-hosted vs API
 
@@ -177,11 +192,16 @@ prompts/v02-*.json              run specs: model revision, prompt, seeds, size, 
 results/                        selected image, contact sheets, billing, per-run metrics
 ```
 
+The scripts were tidied after the runs (configurable control host, renamed Qwen worker, font fallback);
+the generation code, model revisions and settings are the ones used for the results. A dry-run of all
+five model/GPU specs from a fresh copy of this repository was accepted by Nebius on 22 Nov 2026.
+
 ## How to run
 
 **Prerequisites** (control machine, no GPU needed): a Nebius project with credits,
 [Nebius CLI](https://docs.nebius.com/cli/install) logged in, [uv](https://docs.astral.sh/uv/),
-Python 3.12, and an Object Storage bucket with an access key
+Python 3.12, and an Object Storage bucket with an access key, all in region **eu-north1** (the scripts use its
+Object Storage endpoint and the GPU platforms `gpu-l40s-a` and `gpu-h100-sxm`)
 ([quickstart](https://docs.nebius.com/object-storage/quickstart),
 [access keys](https://docs.nebius.com/iam/service-accounts/access-keys)).
 
@@ -220,6 +240,10 @@ price in Billing → Usage and recompute the report with it:
 ```bash
 STATE_FILE=config/last-gen-qwen-h100.json PAID_HOURLY_USD=1.39 uv run python scripts/review_keyframe_batch.py
 ```
+
+The script adds a `paid` scenario to `run-summary.json`. Its c and N = 1000 values equal the tables above
+(USD 0.00883 and 0.00911). Its F is USD 0.2860, not 0.2829: the script counts time from Job creation,
+including the unbilled queueing, while the tables take F from the bill.
 
 **Cleanup.** `run_gen.sh` deletes its Job on every exit and checks that no Job, Endpoint, VM or
 disk is left. If something stays, run `bash scripts/cancel_job.sh <aijob-id>` and check
