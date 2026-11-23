@@ -38,6 +38,6 @@
   "prompt_variant": "short-sana",
   "notes": [
     "Owner decision: Sana gets a shortened prompt because its text limit is 300 tokens; Sana is therefore not prompt-identical to Qwen/Z-Image.",
-    "1344x768 and 20 steps as in launch v01 (Sana's native ~1 MP multiscale)."
+    "1344x768 and 20 steps as in our earlier Sana runs (Sana's native ~1 MP multiscale)."
   ]
 }

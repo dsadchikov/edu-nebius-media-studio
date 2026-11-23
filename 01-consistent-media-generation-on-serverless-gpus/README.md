@@ -4,6 +4,7 @@ Text-to-image batches on **Nebius Serverless AI Jobs** with preemptible GPUs, wi
 time and cost per image. Module 1 of the DataTalksClub course
 [Production AI Agents for Generative Media](https://github.com/DataTalksClub/production-ai-agents-for-media-generation) (2026);
 [homework task](https://github.com/DataTalksClub/production-ai-agents-for-media-generation/blob/main/cohorts/2026/homework/01-consistent-media-generation-on-serverless-gpus/homework.md).
+Post: [The faster GPU was the cheaper one: a legal comic on Nebius](https://medium.com/@dsadchikov_73673/the-faster-gpu-was-the-cheaper-one-a-legal-comic-on-nebius-92d5754f2ae7) (Medium).
 
 ![Qwen-Image on H100 — variant 08 of 10](results/qwen-h100-variant-08.png)
 
@@ -51,6 +52,11 @@ Measured by the worker (`results/runs/qwen-h100/metrics.json`; Job states from t
 | Prompt encoding (once for all images) | 2.0 |
 | **Generation of each image**, 1 to 10 | 23.45, 22.83, 22.89, 22.90, 22.93, 22.84, 22.84, 22.85, 22.87, 22.84 |
 | Generation: median / total for 10 images | **22.86** / 229.3 |
+
+How this matches the cost tables below: they take **work = 10 × median = 228.6 s** (the sum of the ten
+times is 229.3 s) and **preparation = billed machine time 947.0 s − work = 718.4 s**. The phases above
+add up to 740.8 s because the startup includes about 1 min of unbilled queueing; saving and shutdown are
+billed but not listed.
 
 ## Cost per image: self-hosted vs API
 
@@ -133,7 +139,9 @@ sequenceDiagram
 
 ## Results
 
-All 10 images of each model, without selection (H100 runs, same 10 seeds):
+All 10 images of each model, without selection (H100 runs, same 10 seeds). Qwen-Image and Z-Image-Turbo use the
+same prompt at 1664×928 (40 and 8 steps); Sana uses a shorter version of it to fit the 300-token limit in our
+setup, at 1344×768 and 20 steps:
 
 **Qwen-Image** — all five characters and roles right; the stamp is not hidden yet.
 ![Qwen-Image contact sheet](results/contact-sheet-qwen-h100.png)
@@ -158,6 +166,9 @@ Cost of each run of 10 images, from the Nebius billing export (machine + disk; d
 
 Work = 10 × median generation time at the paid price; preparation = the rest of the bill (VM start,
 packages, weight download, model load, saving, shutdown). Preparation is the larger part of every run.
+For Qwen on H100 most of it is the weight download (542.8 s). Loading Qwen took 536.4 s on the L40S machine
+(preset 1gpu-8vcpu-32gb, 32 GB of RAM) and 10.9 s on the H100 machine (preset 1gpu-16vcpu-200gb, 200 GB of
+RAM); RAM was not tested separately.
 For Qwen the faster H100 was cheaper even at a spot price of USD 1.39/h; for the small models the
 L40S was cheaper. The same mistakes appear on both GPUs: a faster GPU does not make the model smarter.
 
@@ -176,7 +187,7 @@ Same definitions in every table, from the billing export:
 
 Storage, network, tax and failed runs are not included. N = 1000 is a projection for one model load;
 the Job time-out (60 min) and the worker limit (30 images) do not allow it in one Job today, and a
-spot price can change during a long run.
+spot price can change during a long run (Nebius may change it every 15 minutes).
 
 ## Repository
 

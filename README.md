@@ -13,4 +13,6 @@ EU AI Act, as short comics generated on serverless GPUs.
 
 *All characters are fictional.*
 
+Post about Homework 1: [The faster GPU was the cheaper one: a legal comic on Nebius](https://medium.com/@dsadchikov_73673/the-faster-gpu-was-the-cheaper-one-a-legal-comic-on-nebius-92d5754f2ae7) (Medium).
+
 Code: [MIT](LICENSE).
